@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.scijava</groupId>
+		<artifactId>pom-scijava</artifactId>
+		<version>14.0.0</version>
+		<relativePath />
+	</parent>
+  
+<!-- Plugin Information -->
+	<groupId>JNH</groupId>
+	<artifactId>MultiFocal_AlignCurvesByLMS_JNH</artifactId>
+	<name>MultiFocal_AlignCurvesByLMS</name>
+ 	<inceptionYear>2019</inceptionYear>	
+	<url>https://github.com/hansenjn/MultiFocal_AlignCurvesByLMS</url>
+	<organization>
+		<name>JNH</name>
+		<url>https://github.com/hansenjn/MultiFocal_AlignCurvesByLMS</url>
+	</organization>
+		
+	<mailingLists>
+		<mailingList>
+			<name>Github/hansenjn</name>
+			<archive>https://github.com/hansenjn/</archive>
+		</mailingList>
+	</mailingLists>	
+		
+	<licenses>
+		<license>
+			<name>GNU General Public License v3+</name>
+			<url>http://www.gnu.org/licenses/gpl.html</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	
+    <developers>
+        <developer>
+            <id></id>
+            <name>Jan N Hansen</name>
+            <email>jan.hansen(at)uni-bonn.de</email>
+            <url>r</url>
+            <organization>University of Bonn - Institue of Innate immunity - Biophysical Imaging</organization>
+            <organizationUrl>http://www.iii.uni-bonn.de/en/wachten_lab/</organizationUrl>
+            <roles>
+                <role>founder</role>
+                <role>lead</role>
+                <role>developer</role>
+                <role>debugger</role>
+                <role>reviewer</role>
+                <role>support</role>
+                <role>maintainer</role>
+            </roles>
+            <timezone>+1</timezone>
+        </developer>
+    </developers>
+    
+    <contributors>
+        <!--
+        NB: Need a least one element to override the parent.
+        See: https://issues.apache.org/jira/browse/MNG-5220
+        -->
+        <contributor><name>None</name></contributor>
+    </contributors>
+ 
+ 	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/hansenjn/MultiFocal_AlignCurvesByLMS/issues</url>
+ 	</issueManagement>
+ 	
+ 	<ciManagement>
+		<system>none</system>
+	</ciManagement>
+ 
+ 	<properties>
+		<main-class>Main</main-class>
+		<package-name>mfAlgnCrvs</package-name>
+		<license.licenseName>gpl_v3</license.licenseName>
+		<license.copyrightOwners>Jan Niklas Hansen</license.copyrightOwners>
+		<license.projectName>MultiFocal_AlignCurvesByLMS</license.projectName>
+	</properties> 
+ 
+  	<scm>
+		<connection>scm:git:git://github.com/hansenjn/MultiFocal_AlignCurvesByLMS</connection>
+		<developerConnection>scm:git:git@github.com:hansenjn/MultiFocal_AlignCurvesByLMS</developerConnection>
+		<tag>HEAD</tag>
+		<url>https://github.com/hansenjn/MultiFocal_AlignCurvesByLMS</url>
+	</scm>
+ 
+<!--  	 <repositories> -->
+<!--         NB: for project parent, in case of partial checkout -->
+<!--         <repository> -->
+<!--             <id>imagej.public</id> -->
+<!--             <url>http://maven.imagej.net/content/groups/public</url> -->
+<!--         </repository> -->
+<!--     </repositories> -->
+ 
+<!-- TODO: See Optional Dependencies section -->
+    <dependencies>
+        <!-- ImageJ dependencies -->
+        <dependency>
+            <groupId>net.imagej</groupId>
+            <artifactId>ij</artifactId>
+        </dependency>
+	</dependencies>  
+    <build>
+		<plugins>
+			<!--         avoid errors in java doc creation			 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<configuration>
+					<additionalparam>-Xdoclint:none</additionalparam>
+				</configuration>
+			</plugin>
+			
+			<plugin>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<projectName>mfAnnlCurves</projectName>
+					<organizationName>Jan Niklas Hansen</organizationName>
+					<descriptorRefs>
+            			<descriptorRef>jar-with-dependencies</descriptorRef>
+          			</descriptorRefs>
+					<archive>
+						<manifest>
+							<mainClass>${main-class}</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+			
+
+		</plugins>
+	</build>  	
+    <version>0.0.1</version>
+</project>
